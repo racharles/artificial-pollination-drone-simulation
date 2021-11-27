@@ -1,0 +1,108 @@
+<?xml version="1.0"?> 
+<sdf version="1.4">
+  <world name="default">
+    <gui>
+      <camera name="developer_camera">
+        <pose>42.116497 1.626615 7.857857 0 0.254009 -3.113798</pose>
+      </camera>
+    </gui>
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <population name="plants">
+      <model name="tomato_plant">
+        <include>
+          <static>true</static>
+          <uri>model://tomato_plant</uri>
+        </include>
+        <include>
+            <name>flower0</name>
+            <pose>0.090843 0.016736 0.636683 -0.518877 0.593951 -0</pose>
+            <static>true</static>
+            <uri>model://tomato_flower</uri>
+        </include>
+        <include>
+          <name>flower1</name>
+            <pose>-0.103083 -0.241325 1.37649 0.564781 -0.328387 -0.201581</pose>
+            <static>true</static>
+            <uri>model://tomato_flower</uri>
+        </include>
+        <include>
+            <name>flower2</name>
+            <pose>-0.076639 0.132433 1.25349 -0.73456 -0.382727 -0.23883</pose>
+            <static>true</static>
+            <uri>model://tomato_flower</uri>
+        </include>
+        <include>
+            <name>flower3</name>
+            <pose>0.117454 0.002115 1.25184 -0.671224 0 0</pose>
+            <static>true</static>
+            <uri>model://tomato_flower</uri>
+        </include>
+        <include>
+            <name>flower4</name>
+            <pose>-0.060066 -0.125163 0.821706 0.406073 -0.273875 -0.115772</pose>
+            <static>true</static>
+            <uri>model://tomato_flower</uri>
+        </include>
+
+      </model>
+      
+      <pose>5.5 2.9 0 0 0 0</pose>
+      <distribution>
+        <type>grid</type>
+        <rows>3</rows>
+        <cols>12</cols>
+        <step>0.91 2.4 0</step>
+        
+      </distribution>
+    </population>
+    
+    <model name='roof'>
+      <pose>5 5 3.04 0 0 0</pose>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>10 10 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <!-- <visual name='visual'>
+          <geometry>
+            <box>
+              <size>20 20 1</size>
+            </box>
+          </geometry>
+        </visual> -->
+      </link>
+    </model>
+
+    <model name="greenhouse_mesh">
+      <pose>0 0 0  0 0 0</pose>
+      <static>true</static>
+      <link name="body">
+      <collision name="greenhouse_collision">
+        <geometry>
+          <mesh>
+            <uri>model://greenhouse/greenhouse_empty.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="greenhouse_visual">
+        <geometry>
+          <mesh><uri>model://greenhouse/greenhouse_empty.dae</uri></mesh>
+          
+        </geometry>
+      </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?> 
+<sdf version="1.4">
+  <world name="default">
+    <gui>
+      <camera name="developer_camera">
+        <pose>42.116497 1.626615 7.857857 0 0.254009 -3.113798</pose>
+      </camera>
+    </gui>
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <model name='roof'>
+      <pose>0 0 3 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>10 20 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>10 20 1</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

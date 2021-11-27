@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <model name="my_mesh">
+      <pose>2 0 0  0 0 0</pose>
+      <static>true</static>
+      <link name="body">
+      <collision name="greenhouse_collision">
+          <geometry>
+            <mesh>
+              <uri>model://greenhouse/greenhouse_fixed.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="greenhouse_visual">
+          <geometry>
+            <mesh><uri>model://greenhouse/greenhouse_fixed.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
